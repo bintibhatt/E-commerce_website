@@ -6,7 +6,6 @@ export const Profile = () => {
   return (
     <div>
       <h3>Welcome @{auth.user.username}!</h3>
-      <input type="text"></input>
     </div>
   );
 };

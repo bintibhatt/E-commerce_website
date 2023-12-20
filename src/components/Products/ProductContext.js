@@ -5,8 +5,10 @@ const ProductContext = createContext(null);
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get("https://dummyjson.com/products?limit=100")
       .then((response) => {
@@ -19,7 +21,9 @@ export const ProductProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products, setProducts }}>
+    <ProductContext.Provider
+      value={{ products, setProducts, isLoading, setIsLoading }}
+    >
       {children}
     </ProductContext.Provider>
   );

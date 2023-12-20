@@ -1,0 +1,8 @@
+[
+  { "key": "value1", "category": "CategoryA" },
+  { "key": "value2", "category": "CategoryB" },
+  { "key": "value3", "category": "CategoryC" },
+  { "key": "value4", "category": "CategoryD" },
+  { "key": "value5", "category": "CategoryE" },
+  { "key": "value6", "category": "CategoryF" }
+]

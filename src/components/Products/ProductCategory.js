@@ -3,13 +3,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ProductCardGrid from "./ProductCardGrid";
+import Button from "@mui/material/Button";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { useProduct } from "./ProductContext";
 
 function ProductCategory() {
   const [products, setProducts] = useState([]);
   const { pCategory } = useParams();
   const navigate = useNavigate();
+  const productUse = useProduct();
 
   useEffect(() => {
+    productUse.setIsLoading(true);
     axios
       .get(`https://dummyjson.com/products/category/${pCategory}`)
       .then((response) => {
@@ -18,14 +23,21 @@ function ProductCategory() {
       .catch((error) => {
         console.log(error);
       });
-  }, [pCategory]);
+  }, [pCategory, productUse]);
 
   function handleProductInfo(pId) {
-    navigate(`${pId}`);
+    navigate(`/products/${pId}`);
   }
 
   return (
     <div>
+      <Button
+        variant="contained"
+        startIcon={<ArrowBackIcon />}
+        onClick={() => navigate("/dashboard")}
+      >
+        Back
+      </Button>
       <h2>List of products</h2>
       <div className="product_card_div">
         {products.map((product) => (

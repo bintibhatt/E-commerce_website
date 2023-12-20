@@ -27,19 +27,31 @@
     align-items: center; }
 
 .primary-nav {
-  font-size: 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center; }
-  .primary-nav .NavLink {
-    color: black;
-    text-decoration: none; }
-    .primary-nav .NavLink .sectionDashboardName {
-      display: flex;
-      align-items: center; }
-    .primary-nav .NavLink .profileNavDiv {
-      display: flex;
-      width: 50%; }
+  height: 10vh; }
+  .primary-nav .website_name {
+    font-family: 'Kalnia';
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer; }
+  .primary-nav .mainNavDiv {
+    width: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .primary-nav .mainNavDiv .NavLink {
+      color: black;
+      text-decoration: none; }
+      .primary-nav .mainNavDiv .NavLink .sectionDashboardName {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        font-size: 20px; }
 
 .product_div section {
   display: flex;
@@ -62,8 +74,74 @@
   height: 250px;
   object-fit: contain; }
 
+.product_div .MuiButton-contained {
+  background-color: gray; }
+
+.product_div .MuiButton-contained:hover {
+  background-color: darkgray; }
+
+.product_div .product_info_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; }
+  .product_div .product_info_div .MuiButton-root {
+    margin-bottom: 20px; }
+  .product_div .product_info_div h2 {
+    font-size: 24px;
+    margin-bottom: 10px; }
+  .product_div .product_info_div .productInfo {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; }
+    .product_div .product_info_div .productInfo .productInfo_images {
+      width: 50%; }
+      .product_div .product_info_div .productInfo .productInfo_images img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 10px; }
+      .product_div .product_info_div .productInfo .productInfo_images .productImages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; }
+        .product_div .product_info_div .productInfo .productInfo_images .productImages img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 8px; }
+    .product_div .product_info_div .productInfo .productInfo_content {
+      width: 50%;
+      padding: 2%; }
+
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
 
 body {
-  padding: 20px; }
+  padding: 1%; }
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+  body .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 10px solid #f3f3f3;
+    /* Light grey */
+    border-top: 10px solid #383636;
+    /* Black */
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite; }
+  body .MuiButton-contained {
+    background-color: darkgray;
+    color: black; }
+  body .MuiButton-contained:hover {
+    background-color: gray;
+    color: white; }

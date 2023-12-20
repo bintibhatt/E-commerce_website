@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -20,29 +19,19 @@ export default function ProfileButton({ navLinkStyles, auth, handleLogout }) {
   };
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          textAlign: "center",
-          justifyContent: "flex-end",
-        }}
-      >
-        <Tooltip title="Account settings">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-          >
-            <Avatar sx={{ width: 32, height: 32, color: "black" }}>
-              {auth.user.username[0]}
-            </Avatar>
-          </IconButton>
-        </Tooltip>
-      </Box>
+      <Tooltip title="Account settings">
+        <IconButton
+          onClick={handleClick}
+          size="small"
+          aria-controls={open ? "account-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+        >
+          <Avatar sx={{ width: 50, height: 50, color: "black" }}>
+            {auth.user.username[0]}
+          </Avatar>
+        </IconButton>
+      </Tooltip>
       <Menu
         anchorEl={anchorEl}
         id="account-menu"
@@ -54,7 +43,6 @@ export default function ProfileButton({ navLinkStyles, auth, handleLogout }) {
           sx: {
             overflow: "visible",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-            mt: 1.5,
             "& .MuiAvatar-root": {
               width: 32,
               height: 32,
@@ -78,12 +66,12 @@ export default function ProfileButton({ navLinkStyles, auth, handleLogout }) {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar />{" "}
-          <NavLink className="NavLink" style={navLinkStyles} to="/profile">
+        <NavLink className="NavLink" style={navLinkStyles} to="/profile">
+          <MenuItem onClick={handleClose}>
+            <Avatar />{" "}
             <p style={{ textDecoration: "none", color: "black" }}>Profile </p>
-          </NavLink>
-        </MenuItem>
+          </MenuItem>
+        </NavLink>
         {auth.user.username && (
           <MenuItem onClick={handleLogout}>
             <ListItemIcon>
