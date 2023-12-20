@@ -1,0 +1,33 @@
+.product_div {
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    select {
+      height: 50%;
+    }
+  }
+
+  .product_card_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    #product_card {
+      margin-bottom: 20px;
+    }
+
+    #product_card:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  .MuiCardMedia-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+  }
+
+
+}

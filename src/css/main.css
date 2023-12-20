@@ -1,0 +1,69 @@
+.dashboard_category .heading_section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: wrap; }
+
+.dashboard_category .body_section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
+
+.dashboard_category .category_div {
+  margin: 10px; }
+
+.login_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+  .login_div .login_card,
+  .login_div .login_input_field {
+    margin-bottom: 20px; }
+  .login_div .login_button {
+    display: flex;
+    align-items: center; }
+
+.primary-nav {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .primary-nav .NavLink {
+    color: black;
+    text-decoration: none; }
+    .primary-nav .NavLink .sectionDashboardName {
+      display: flex;
+      align-items: center; }
+    .primary-nav .NavLink .profileNavDiv {
+      display: flex;
+      width: 50%; }
+
+.product_div section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .product_div section select {
+    height: 50%; }
+
+.product_div .product_card_div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .product_div .product_card_div #product_card {
+    margin-bottom: 20px; }
+  .product_div .product_card_div #product_card:hover {
+    transform: scale(1.03); }
+
+.product_div .MuiCardMedia-img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain; }
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+body {
+  padding: 20px; }

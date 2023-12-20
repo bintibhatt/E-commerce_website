@@ -1,0 +1,14 @@
+.login_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  .login_card,
+  .login_input_field {
+    margin-bottom: 20px;
+  }
+  .login_button {
+    display: flex;
+    align-items: center;
+  }
+}

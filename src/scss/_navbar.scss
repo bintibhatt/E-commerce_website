@@ -1,0 +1,21 @@
+.primary-nav {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .NavLink {
+    color: black;
+    text-decoration: none;
+
+    .sectionDashboardName {
+      display: flex;
+      align-items: center;
+    }
+
+    .profileNavDiv {
+      display: flex;
+      width: 50%;
+    }
+  }
+}
