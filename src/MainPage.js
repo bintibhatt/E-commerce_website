@@ -12,6 +12,7 @@ import ProductInfo from "./components/Products/ProductInfo";
 import ProductDiv from "./components/Products/ProductDiv";
 import { ProductProvider } from "./components/Products/ProductContext";
 import ProductCategory from "./components/Products/ProductCategory";
+import ManageCart from "./components/Cart/ManageCart";
 
 function MainPage() {
   return (
@@ -45,6 +46,7 @@ function MainPage() {
               </ProtectedRoute>
             }
           ></Route>
+          <Route path="/cart" element={<ManageCart />}></Route>
         </Routes>
       </ProductProvider>
     </AuthProvider>

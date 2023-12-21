@@ -1,18 +1,30 @@
 [
   {
     "username": "john.doe",
-    "password": "john.doe"
+    "password": "john.doe",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com"
   },
   {
     "username": "jane.smith",
-    "password": "jane.smith"
+    "password": "jane.smith",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com"
   },
   {
     "username": "bob.johnson",
-    "password": "bob.johnson"
+    "password": "bob.johnson",
+    "firstName": "Bob",
+    "lastName": "Johnson",
+    "email": "bob.johnson@example.com"
   },
   {
     "username": "abc",
-    "password": "abc"
+    "password": "abc",
+    "firstName": "abc",
+    "lastName": "abc",
+    "email": "abc@example.com"
   }
 ]

@@ -6,6 +6,7 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import HomeIcon from "@mui/icons-material/Home";
 import Divider from "@mui/material/Divider";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import { Badge } from "@mui/icons-material";
 
 const navLinkStyles = ({ isActive }) => {
   return {
@@ -47,10 +48,12 @@ export const Navbar = () => {
                   <DashboardIcon />
                 </div>
               </NavLink>
-              <NavLink className="NavLink" style={navLinkStyles} to="">
+              <NavLink className="NavLink" style={navLinkStyles} to="/cart">
                 <div className="sectionDashboardName">
                   <p>Cart </p>
+                  {/* <Badge color="secondary" badgeContent="1"> */}
                   <ShoppingCartIcon />
+                  {/* </Badge> */}
                 </div>
               </NavLink>
             </>

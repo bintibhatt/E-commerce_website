@@ -1,21 +1,24 @@
-.dashboard_category {
+.dashboardDiv {
+    margin-top: 10px;
 
-    .heading_section {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        flex-wrap: wrap;
-    }
+    .dashboard_category {
+        .heading_section {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
 
-    .body_section {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
+        .body_section {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
 
-    .category_div {
-        margin: 10px;
+        .category_div {
+            margin: 10px;
+        }
     }
 }

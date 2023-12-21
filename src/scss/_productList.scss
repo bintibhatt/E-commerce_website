@@ -12,6 +12,8 @@
   .product_card_div {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 15px;
     justify-content: space-between;
 
     #product_card {

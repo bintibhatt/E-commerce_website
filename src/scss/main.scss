@@ -8,7 +8,7 @@
 }
 
 body {
-  padding: 1%;
+  padding: 10px;
 
   @keyframes spinner {
     0% {
@@ -39,5 +39,9 @@ body {
   .MuiButton-contained:hover {
     background-color: gray;
     color: white;
+  }
+
+  .MuiCircularProgress-circleIndeterminate {
+    color: black;
   }
 }

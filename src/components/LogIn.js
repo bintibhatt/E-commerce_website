@@ -55,66 +55,59 @@ function Login() {
 
   return (
     <div className="login_div">
-      <div className="login_card">
-        <h3>Login</h3>
-        <TextField
-          id="outlined-multiline-flexible"
-          className="login_input_field"
-          label="username"
-          type="text"
-          name="username"
-          value={user.username}
-          onChange={handleChange}
-          multiline
-        />
-        <br></br>
-        {/* <TextField
-          id="outlined-multiline-flexible"
-          className="login_input_field"
-          type="password"
-          label="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-          multiline
-          size="small"
-        /> */}
-        <FormControl sx={{ width: "22ch" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
-            Password
-          </InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
+      {!auth.cookie ? (
+        <div className="login_card">
+          <h3>Login</h3>
+          <TextField
+            id="outlined-multiline-flexible"
             className="login_input_field"
-            label="password"
-            name="password"
-            value={user.password}
+            label="username"
+            type="text"
+            name="username"
+            value={user.username}
             onChange={handleChange}
+            multiline
           />
-        </FormControl>
+          <br></br>
+          <FormControl sx={{ width: "22ch" }} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password">
+              Password
+            </InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-password"
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              className="login_input_field"
+              label="password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+            />
+          </FormControl>
 
-        <br></br>
-        <Button
-          variant="contained"
-          onClick={handleLogin}
-          className="login_button"
-        >
-          Login
-        </Button>
-      </div>
+          <br></br>
+          <Button
+            variant="contained"
+            onClick={handleLogin}
+            className="login_button"
+          >
+            Login
+          </Button>
+        </div>
+      ) : (
+        navigate("/dashboard")
+      )}
     </div>
   );
 }

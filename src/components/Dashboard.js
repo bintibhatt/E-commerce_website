@@ -8,6 +8,7 @@ import axios from "axios";
 function Dashboard() {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+  // const productUse = useProduct();
 
   function getAllProducts() {
     navigate("/products");
@@ -33,33 +34,35 @@ function Dashboard() {
   }, []);
 
   return (
-    <div>
-      <Button
-        variant="contained"
-        endIcon={<StoreIcon />}
-        onClick={getAllProducts}
-      >
-        Show All Products
-      </Button>
-      <div className="dashboard_category">
-        <section className="heading_section">
-          <h2>Shop by Category </h2>
-          <ArrowForwardIosIcon />
-        </section>
-        <section className="body_section">
-          {categories.map((category) => (
-            <div key={category} className="category_div">
-              <Button
-                variant="contained"
-                onClick={() => getByCategory(category)}
-              >
-                {category}
-              </Button>
-            </div>
-          ))}
-        </section>
+    <>
+      <div className="dashboardDiv">
+        <Button
+          variant="contained"
+          endIcon={<StoreIcon />}
+          onClick={getAllProducts}
+        >
+          Show All Products
+        </Button>
+        <div className="dashboard_category">
+          <section className="heading_section">
+            <h2>Shop by Category </h2>
+            <ArrowForwardIosIcon />
+          </section>
+          <section className="body_section">
+            {categories.map((category) => (
+              <div key={category} className="category_div">
+                <Button
+                  variant="contained"
+                  onClick={() => getByCategory(category)}
+                >
+                  {category}
+                </Button>
+              </div>
+            ))}
+          </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

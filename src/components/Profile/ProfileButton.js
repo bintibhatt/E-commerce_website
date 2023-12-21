@@ -27,7 +27,13 @@ export default function ProfileButton({ navLinkStyles, auth, handleLogout }) {
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
         >
-          <Avatar sx={{ width: 50, height: 50, color: "black" }}>
+          <Avatar
+            sx={{
+              width: 50,
+              height: 50,
+              color: "black",
+            }}
+          >
             {auth.user.username[0]}
           </Avatar>
         </IconButton>

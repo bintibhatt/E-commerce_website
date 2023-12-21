@@ -14,9 +14,19 @@ export default function ProductCardGrid({
 }) {
   return (
     <Card sx={{ maxWidth: 250, maxHeight: 400, border: "1px solid black" }}>
-      <Typography variant="subtitle1" style={{ margin: "10px" }}>
-        {pTitle}
+      <Typography
+        variant="subtitle1"
+        style={{
+          margin: "5px",
+          fontSize: "15px",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {pTitle.split(" ").slice(0, 5).join(" ")}{" "}
       </Typography>
+
       <CardMedia component="img" src={pImg[0]} alt={pImg} />
       <CardContent>
         <Typography variant="body2" style={{ fontWeight: "700" }}>
