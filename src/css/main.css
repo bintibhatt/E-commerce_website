@@ -58,8 +58,7 @@
 
 .product_div section {
   display: flex;
-  align-items: center;
-  justify-content: space-between; }
+  align-items: center; }
   .product_div section select {
     height: 50%; }
 
@@ -67,8 +66,7 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 15px;
-  column-gap: 15px;
-  justify-content: space-between; }
+  column-gap: 15px; }
   .product_div .product_card_div #product_card {
     margin-bottom: 20px; }
   .product_div .product_card_div #product_card:hover {

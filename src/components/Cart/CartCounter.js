@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState } from "react";
 import Box from "@mui/material/Box";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
@@ -10,25 +9,37 @@ import { useProduct } from "../Products/ProductContext";
 
 export default function CartCounter({ pId }) {
   const { productCart, setProductCart } = useProduct();
-  const [count, setCount] = useState(0);
 
   function addCount() {
-    setCount(count + 1);
-    console.log("After adding:", productCart, count);
+    if (!productCart.find((element) => element.id === pId)) {
+      setProductCart((prev) => [...prev, { id: pId, productCount: 1 }]);
+    } else {
+      setProductCart((prev) =>
+        prev.map((element) =>
+          element.id === pId
+            ? { ...element, productCount: element.productCount + 1 }
+            : element
+        )
+      );
+    }
   }
 
   function subtractCount() {
-    const newCount = Math.max(count - 1, 0);
-    console.log("After subtracting:", newCount);
+    productCart.forEach((element) => {
+      if (element.id === pId && element.productCount > 0) {
+        element.productCount--;
+        setProductCart([...productCart]);
+      }
+    });
   }
 
   function clearCount() {
-    setCount(0);
-    setProductCart({
-      ...productCart,
-      productCount: 0,
+    productCart.forEach((element) => {
+      if (element.id === pId) {
+        element.productCount = 0;
+        setProductCart([...productCart]);
+      }
     });
-    console.log("After clearing:", 0);
   }
 
   return (
@@ -54,8 +65,9 @@ export default function CartCounter({ pId }) {
           <RemoveIcon fontSize="small" />
         </Button>
         <Button disabled style={{ color: "black", border: "1px solid black" }}>
-          {count}
+          {productCart.find((item) => item.id === pId)?.productCount || 0}
         </Button>
+
         <Button
           aria-label="increase"
           onClick={addCount}

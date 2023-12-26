@@ -6,7 +6,6 @@ const ProductContext = createContext(null);
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const [productCart, setProductCart] = useState([]);
 
   useEffect(() => {

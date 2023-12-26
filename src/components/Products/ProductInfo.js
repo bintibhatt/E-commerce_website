@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
@@ -16,20 +16,38 @@ function ProductInfo() {
   const navigate = useNavigate();
   const productUse = useProduct();
 
-  useEffect(() => {
-    productUse.setIsLoading(true);
+  //using async await to fetch data
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        `https://dummyjson.com/products/${productId}`
+      );
+      setProduct(response.data);
+      productUse.setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+      productUse.setIsLoading(false);
+    }
+  };
 
-    axios
-      .get(`https://dummyjson.com/products/${productId}`)
-      .then((response) => {
-        setProduct(response.data);
-        productUse.setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        productUse.setIsLoading(false);
-      });
-  }, [productId]);
+  useState(() => {
+    fetchData();
+  }, []);
+
+  // useEffect(() => {
+  //   productUse.setIsLoading(true);
+
+  //   axios
+  //     .get(`https://dummyjson.com/products/${productId}`)
+  //     .then((response) => {
+  //       setProduct(response.data);
+  //       productUse.setIsLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       productUse.setIsLoading(false);
+  //     });
+  // }, [productId]);
 
   function handleImageChange() {}
 
